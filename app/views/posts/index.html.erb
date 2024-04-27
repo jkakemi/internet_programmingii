@@ -1,0 +1,23 @@
+<div id="header">
+  <h1 id="title">RubyPost</h1>
+</div>
+
+<div id="main">
+  <fieldset class="field">
+      <legend class="edit">Faça uma postagem</legend>
+      <%= link_to "Nova postagem", new_post_path %>
+      <div class="separar"></div>
+    <legend class="edit">Postagens:</legend>
+    <div id="posts">
+      <% @posts.each do |post| %>
+        <%= render post %>
+        <p>
+          <%= link_to "Mostrar", post %>
+        </p>
+        <div class="line"></div>
+      <% end %>
+    </div>
+  </fieldset>
+</div>
+
+<p style="color: green"><%= notice %></p>
